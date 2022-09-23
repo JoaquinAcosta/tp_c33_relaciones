@@ -9,7 +9,7 @@
 </head>
 <body>
     <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
+        <a href="/"><img src="/img/logo-DH.png" alt="Logo Digital House"></a>
     </figure>    
     <h1><%= actor.last_name %>, <%= actor.first_name %></h1>
     <br>
@@ -26,12 +26,9 @@
     <p>El actor no tiene películas</p>
     <% } %>
     <br>
-    <% if (actor.favoriteMovie.id) { %>
     <h4>Película Favorita: <a href="/movies/detail/<%= actor.favoriteMovie.id %>"><%= actor.favoriteMovie.title %></a></h4>
-     
-    <% }else{ %>
     <br>
-    <p>El actor no tiene película favorita</p>
-    <% } %>
+    <br>
+    <p><a class="botonVolver" href="/actors">Volver</a></p>
 </body>
 </html>
