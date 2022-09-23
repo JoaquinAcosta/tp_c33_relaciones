@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= actor.last_name %>, <%= actor.first_name %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>    
+    <h1><%= actor.last_name %>, <%= actor.first_name %></h1>
+    <br>
+    <h2>Películas</h2>
+    <br>
+    <% if (actor.movies.length) { %>
+        <ul>
+            <% actor.movies.forEach(movie => { %>
+              <li><a href="/movies/detail/<%= movie.id %>"><%= movie.title %></a></li>
+            <% }) %>
+        </ul>
+        
+    <% }else{ %>
+    <p>El actor no tiene películas</p>
+    <% } %>
+    <br>
+    <% if (actor.favoriteMovie.id) { %>
+    <h4>Película Favorita: <a href="/movies/detail/<%= actor.favoriteMovie.id %>"><%= actor.favoriteMovie.title %></a></h4>
+     
+    <% }else{ %>
+    <br>
+    <p>El actor no tiene película favorita</p>
+    <% } %>
+</body>
+</html>
